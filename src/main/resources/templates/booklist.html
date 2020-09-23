@@ -12,14 +12,16 @@
 		<tr>
 		    <th >Title</th>
 		    <th >Author</th>
-		    <th >Year</th>
+		    <th >Category</th>	<!-- Category -->
 		    <th ></th>
 		    <th ></th>
 		</tr>  
     	<tr class="table table-striped" th:each = "book : ${books}">
     		<td th:text="${book.title}"></td>
     		<td th:text="${book.author}"></td>
-    		<td th:text="${book.year}"></td>
+   	<!--	<td th:text="${book.year}"></td>	 -->
+   			<td th:text="${book.category.name}"></td>
+    			<!-- category.name -->
      	
      		<td><a class = "editButton" th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
     		<td><a class = "btn-danger" th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
