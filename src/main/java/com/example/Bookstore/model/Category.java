@@ -18,7 +18,7 @@ public class Category {
 	private Long categoryId;
 	private String name; 
 	
-	@JsonBackReference
+//	@JsonBackReference
 	@OneToMany (cascade = CascadeType.ALL, mappedBy = "category")
 	private List<Book> books;
 	
