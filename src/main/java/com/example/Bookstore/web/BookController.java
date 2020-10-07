@@ -26,6 +26,7 @@ public class BookController {
 	@Autowired
 	private CategoryRepository crepo;
 	
+	
 	@RequestMapping(value="/login")
 	public String login() {
 		return "loginpage";
