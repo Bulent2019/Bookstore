@@ -32,7 +32,7 @@ public class BookController {
 		return "loginpage";
 	}
 	
-	@RequestMapping(value = {"/booklist"})
+	@RequestMapping(value = {"/", "/booklist"})
 	public String bookList(Model model) {
 		model.addAttribute("books", repository.findAll());
 		return "booklist";
