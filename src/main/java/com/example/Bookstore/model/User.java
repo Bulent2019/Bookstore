@@ -3,6 +3,7 @@ package com.example.Bookstore.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name="usertable")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +14,7 @@ public class User {
 	private String username;
 	
 	@Column(name = "password", nullable = false)
-	private String password;
+	private String passwordHash;
 	
 	@Column(name = "role", nullable = false)
 	private String role;
@@ -25,7 +26,7 @@ public class User {
 	public User(String username, String password, String role) {
 		super();
 		this.username = username;
-		this.password = password;
+		this.passwordHash = password;
 		this.role = role;
 	}
 
@@ -46,11 +47,11 @@ public class User {
 	}
 
 	public String getPassword() {
-		return password;
+		return passwordHash;
 	}
 
 	public void setPassword(String passwordHash) {
-		this.password = passwordHash;
+		this.passwordHash = passwordHash;
 	}
 
 	public String getRole() {
