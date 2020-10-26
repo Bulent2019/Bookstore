@@ -28,6 +28,9 @@ public class BookstoreApplication {
 	public CommandLineRunner bookDemo(BookRepository repository, CategoryRepository crepo, UserRepository urepository) {
 		return (args) -> {
 			log.info("save a couple of students");
+			repository.deleteAll();
+			crepo.deleteAll();
+			urepository.deleteAll();
 			crepo.save(new Category(""));
 			crepo.save(new Category("Sci-Fi"));
 			crepo.save(new Category("Classics"));
